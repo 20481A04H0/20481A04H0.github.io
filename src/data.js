@@ -14,4 +14,16 @@ export const questions = [
     options: ["Shakespeare", "Dante", "Homer", "Tolstoy"],
     answer: "Shakespeare",
   },
+  {
+  question: 'What is the default value of a boolean variable in Java?',
+  options: ["true", "false", "null", "0"],
+  answer: "false",
+},
+
+{
+  question: 'Which keyword is used to inherit a class in Java?',
+  options: ["super", "extends", "this", "implements"],
+  answer: "extends",
+},
+
 ];
