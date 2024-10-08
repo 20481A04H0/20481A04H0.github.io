@@ -1,11 +1,13 @@
 import React from "react";
-import { QRCodeCanvas } from "qrcode.react"; // or QRCodeSVG based on your choice
+import { QRCodeCanvas } from "qrcode.react"; // Import QRCodeCanvas
+
+import "../styles/QRCodeGenerator.css";
 
 const QRCodeGenerator = ({ url }) => {
   return (
-    <div>
-      <h2>Scan to Join the Game</h2>
-      <QRCodeCanvas value={url} />
+    <div className="qr-code-container">
+      <h3>Scan the QR code to join the game on mobile</h3>
+      <QRCodeCanvas value={url} size={150} /> {/* Generate QR code */}
     </div>
   );
 };

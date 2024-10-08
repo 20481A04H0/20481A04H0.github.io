@@ -1,13 +1,14 @@
 import React from "react";
+import "../styles/Question.css";
 
 const Question = ({ question, options, onAnswer }) => {
   return (
-    <div>
-      <h3>{question}</h3>
-      <div>
-        {Object.keys(options).map((key) => (
-          <button key={key} onClick={() => onAnswer(key)}>
-            {key}: {options[key]}
+    <div className="question-container">
+      <h2>{question}</h2>
+      <div className="options">
+        {options.map((option, index) => (
+          <button key={index} onClick={() => onAnswer(option)}>
+            {option}
           </button>
         ))}
       </div>

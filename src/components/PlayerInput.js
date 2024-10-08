@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/PlayerInput.css";
 
 const PlayerInput = ({ onSubmit }) => {
   const [name, setName] = useState("");
@@ -9,16 +10,19 @@ const PlayerInput = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Enter your name"
-        required
-      />
-      <button type="submit">Join Game</button>
-    </form>
+    <div className="player-input">
+      <h1>Enter your name to join the game</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <button type="submit">Join Game</button>
+      </form>
+    </div>
   );
 };
 

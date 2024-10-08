@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import QRCodeGenerator from "./components/QRCodeGenerator";
 import PlayerInput from "./components/PlayerInput";
 import Question from "./components/Question";
 import Result from "./components/Result";
 import { questions } from "./data";
+import "./styles/App.css";
 
 const App = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -38,14 +39,15 @@ const App = () => {
         ) : (
           <>
             <QRCodeGenerator url={window.location.href} />
-            {currentQuestionIndex < questions.length ? (
+            {currentQuestionIndex < questions.length &&
+            questions[currentQuestionIndex] ? (
               <Question
                 question={questions[currentQuestionIndex].question}
                 options={questions[currentQuestionIndex].options}
                 onAnswer={handleAnswer}
               />
             ) : (
-              <Result message="Game Over! Thank you for playing!" />
+              <p className="error">Error: Question data is not available</p>
             )}
             {message && <Result message={message} />}
           </>
