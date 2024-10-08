@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Result.css";
+import "../App.css";
 
 const Result = ({ message }) => {
   return <div className="result">{message}</div>;
